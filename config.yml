@@ -1,0 +1,4 @@
+website : "https://www.patrioticalternative.org.uk"
+url_sections : ['https://www.patrioticalternative.org.uk/activism_events', 'https://www.patrioticalternative.org.uk/news']
+tot_pages: [5, 181]
+page_prefix : '?page='
