@@ -11,7 +11,7 @@ CONFIG = yaml.safe_load(open("config.yml"))
 BASE_URL = CONFIG['website']
 
 def get_links_from_homepage():
-    """Extract article links from the homepage."""
+    """Extract links from the homepage."""
     response = requests.get(BASE_URL, headers=HEADERS, timeout=30)
     response.raise_for_status()
 
@@ -36,7 +36,7 @@ def get_links_from_homepage():
     return links
 
 def get_links_from_section(url_section, tot_page):
-    """Extract article links from specidic sections of the webpage."""
+    """Extract article links from specific sections of the website."""
     links = set()
     for page_number in range(1,tot_page):
         url = url_section+CONFIG['page_prefix']+str(page_number)
@@ -122,12 +122,14 @@ def extract_article(url):
 def main():
     print("Collecting URLs...")
     urls= get_links_from_homepage()
+
     # extract only relevant data from specific sections:
     url_sections = CONFIG['url_sections']
     urls = [x for x in urls if x not in url_sections]
     print("Collecting URLs from ", url_sections)
     for n, sec in zip(CONFIG['tot_pages'], url_sections):
         urls = urls+get_links_from_section(sec, n+1)
+    
     urls = sorted(urls)
     print(len(urls))
 
