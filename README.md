@@ -21,11 +21,15 @@ The scraper is designed to be reusable across different websites through a confi
 ---
 ## Use
 
-Clone the repository.
-Install dependencies: pip install -r requirements.txt
-Configure config.yml.
-Run: python scraper.py.
-Inspect the generated articles.json file.
+1. Clone the repository.
+
+2. Install dependencies: pip install -r requirements.txt
+
+3. Configure config.yml.
+
+4. Run: python scraper.py.
+
+5. Inspect the generated articles.json file.
 
 **Use the scraper responsibly for research purposes.**
 
